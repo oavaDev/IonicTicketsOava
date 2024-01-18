@@ -1,15 +1,26 @@
-<ion-header [translucent]="true">
+<link rel="stylesheet" href="home.page.scss">
+<ion-header class="header" [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-title c>
+      Tickets.me
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <swiper-container>
-    <swiper-slide>Slide 1</swiper-slide>
+    <swiper-slide>
+      <app-orbiting-slide></app-orbiting-slide>
+      <ion-text class="slide-title" >Welcome to Tickets.me </ion-text>
+      <ion-text class="slide-description"   >We are a service application to manage your ticket without charging any fees, enjoy your hobby freely </ion-text>
+      <ion-button class="slide-button" color="medium" fill="outline" expand="Block">
+        Next
+        <ion-icon name="caret-forward-outline"></ion-icon>
+      </ion-button>
+    </swiper-slide>
     <swiper-slide>Slide 2</swiper-slide>
     <swiper-slide>Slide 3</swiper-slide>
   </swiper-container>
+  <div>
+  </div>
 </ion-content>

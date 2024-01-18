@@ -1,0 +1,82 @@
+// Base
+body {
+  background: #252525;
+}
+
+// Keyframes
+@keyframes rotateClockwise {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateCounterClockwise {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+// Ring
+.ring {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  border: 1px solid #666;
+  border-radius: 50%;
+}
+
+// Dots
+.dot {
+  position: absolute;
+  height: 250px;
+  width: 40px;
+  top: -25px;
+  left: 50%;
+  margin-left: -20px;
+
+  &:before {
+    display: block;
+    content: '';
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 3px rgba(0,0,0,.1);
+  }
+}
+
+.dot--one {
+  animation: rotateClockwise 9s linear infinite;
+  position: relative;
+  ion-img{
+    position: absolute;
+    border-radius: 200px;
+    top: 10px;
+  }
+}
+
+.dot--two {
+  animation: rotateCounterClockwise 8s linear infinite;
+  ion-img{
+    position: absolute;
+    border-radius: 200px;
+    top: 10px;
+  }
+}
+
+.dot--three {
+  animation: rotateClockwise 12s linear infinite;
+  ion-img{
+    position: absolute;
+    border-radius: 200px;
+    top: 10px;
+  }
+}
+
+.dot--four {
+  animation: rotateCounterClockwise 10s linear infinite;
+  ion-img{
+    position: absolute;
+    border-radius: 200px;
+    top: 10px;
+  }
+}
