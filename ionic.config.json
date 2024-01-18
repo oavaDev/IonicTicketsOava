@@ -1,0 +1,7 @@
+{
+  "name": "IonicMyTickets",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
