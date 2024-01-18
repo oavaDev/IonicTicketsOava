@@ -1,10 +1,56 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {interval, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit, OnDestroy {
+  interval1: string = 'dark';
+  interval2: string = 'dark';
+  interval3: string = 'dark';
+  intervalSubscription1!: Subscription;
+  intervalSubscription2!: Subscription;
+  intervalSubscription3!: Subscription;
+  intervals = [1000,1050,1100]
+  ngOnInit() {
+    this.intervalSubscription1 = interval(this.intervals[0])
+      .subscribe(() => {
+        if (this.interval1 === 'dark') {
+          this.interval1 = 'medium';
+        } else {
+          this.interval1 = 'dark';
+        }
+      });
 
+    this.intervalSubscription2 = interval(this.intervals[1])
+      .subscribe(() => {
+        if (this.interval2 === 'dark') {
+          this.interval2 = 'medium';
+        } else {
+          this.interval2 = 'dark';
+        }
+      });
+    this.intervalSubscription1 = interval(this.intervals[2])
+      .subscribe(() => {
+        if (this.interval3 === 'dark') {
+          this.interval3 = 'medium';
+        } else {
+          this.interval3 = 'dark';
+        }
+      });
+  }
+
+  ngOnDestroy() {
+    if (this.intervalSubscription1) {
+      this.intervalSubscription1.unsubscribe();
+    }
+    if (this.intervalSubscription2) {
+      this.intervalSubscription2.unsubscribe();
+    }
+    if (this.intervalSubscription3) {
+      this.intervalSubscription3.unsubscribe();
+    }
+  }
 }

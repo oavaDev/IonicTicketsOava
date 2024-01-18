@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="home.page.scss">
 <ion-header class="header" [translucent]="true">
   <ion-toolbar>
-    <ion-title c>
+    <ion-title >
       Tickets.me
     </ion-title>
   </ion-toolbar>
@@ -12,10 +12,13 @@
     <swiper-slide>
       <app-orbiting-slide></app-orbiting-slide>
       <ion-text class="slide-title" >Welcome to Tickets.me </ion-text>
-      <ion-text class="slide-description"   >We are a service application to manage your ticket without charging any fees, enjoy your hobby freely </ion-text>
+      <ion-text class="slide-description">We are a service application to manage your ticket without charging any fees, enjoy your hobby freely </ion-text>
       <ion-button class="slide-button" color="medium" fill="outline" expand="Block">
-        Next
-        <ion-icon name="caret-forward-outline"></ion-icon>
+        Slide
+        <ion-icon [color]="interval1" name="caret-forward-outline"></ion-icon>
+        <ion-icon [color]="interval2" name="caret-forward-outline"></ion-icon>
+        <ion-icon [color]="interval3" name="caret-forward-outline"></ion-icon>
+
       </ion-button>
     </swiper-slide>
     <swiper-slide>Slide 2</swiper-slide>
