@@ -1,0 +1,19 @@
+.slide-main{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .slide-title{
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  .slide-description{
+    text-align: center;
+    padding: 2rem;
+  }
+  .slide-button {
+    width: 20rem;
+  }
+}
+
