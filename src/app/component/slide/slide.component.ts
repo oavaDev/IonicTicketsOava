@@ -1,20 +1,18 @@
-import {Component, Input, OnInit} from '@angular/core';
-
+import {Component, Input } from '@angular/core';
+import {ISlideComponent} from "../../Interfaces/IslideComponent";
 @Component({
   selector: 'app-slide',
   templateUrl: './slide.component.html',
   styleUrls: ['./slide.component.scss'],
 })
 export class SlideComponent {
-  @Input() title : string;
-  @Input() description : string
-  @Input() flags : string
+  @Input() data : ISlideComponent
   @Input() index : number
-
   constructor() {
-    this.title = ""
-    this.description = ""
-    this.flags = ""
-    this.index = NaN
+    this.data = {
+      title : "",
+      description : ""
+    };
+    this.index = 0
   }
 }

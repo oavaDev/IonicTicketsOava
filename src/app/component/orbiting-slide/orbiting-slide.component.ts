@@ -5,7 +5,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './orbiting-slide.component.html',
   styleUrls: ['./orbiting-slide.component.scss'],
 })
-export class OrbitingSlideComponent  implements OnInit {
+export class OrbitingSlideComponent {
   constructor() { }
-  ngOnInit() {}
 }

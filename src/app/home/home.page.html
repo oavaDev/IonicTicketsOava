@@ -10,7 +10,7 @@
 <ion-content [fullscreen]="true">
   <swiper-container>
     <swiper-slide *ngFor="let slide of slides; index as i">
-      <app-slide [title]="slide.title" [description]="slide.description" [index]="i" ></app-slide>
+      <app-slide [data]="slide" [index] = "i"></app-slide>
       <app-slide-button></app-slide-button>
     </swiper-slide>
   </swiper-container>
