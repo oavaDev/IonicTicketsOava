@@ -9,21 +9,9 @@
 
 <ion-content [fullscreen]="true">
   <swiper-container>
-    <swiper-slide>
-      <app-orbiting-slide></app-orbiting-slide>
-      <ion-text class="slide-title" >Welcome to Tickets.me </ion-text>
-      <ion-text class="slide-description">We are a service application to manage your ticket without charging any fees, enjoy your hobby freely </ion-text>
-      <ion-button class="slide-button" color="medium" fill="outline" expand="Block">
-        Slide
-        <ion-icon [color]="interval1" name="caret-forward-outline"></ion-icon>
-        <ion-icon [color]="interval2" name="caret-forward-outline"></ion-icon>
-        <ion-icon [color]="interval3" name="caret-forward-outline"></ion-icon>
-
-      </ion-button>
+    <swiper-slide *ngFor="let slide of slides; index as i">
+      <app-slide [title]="slide.title" [description]="slide.description" [index]="i" ></app-slide>
+      <app-slide-button></app-slide-button>
     </swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
   </swiper-container>
-  <div>
-  </div>
 </ion-content>

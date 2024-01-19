@@ -1,27 +1,16 @@
 .header{
+  text-align: center;
   ion-title{
     font-style: normal;
     font-weight: bolder;
   }
 }
-
 swiper-container{
   height: 100%;
-}
-swiper-slide {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  .slide-title{
-    margin-top: 1rem;
-    font-weight: bold;
-  }
-  .slide-description{
-    text-align: center;
-    padding: 2rem;
-  }
-  .slide-button {
-    width: 20rem;
+  swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }

@@ -8,6 +8,8 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {OrbitingSlideComponent} from "../component/orbiting-slide/orbiting-slide.component";
+import {SlideComponent} from "../component/slide/slide.component";
+import {SlideButtonComponent} from "../component/slide-button/slide-button.component";
 @NgModule({
   imports: [
     CommonModule,
@@ -15,7 +17,7 @@ import {OrbitingSlideComponent} from "../component/orbiting-slide/orbiting-slide
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, OrbitingSlideComponent],
+  declarations: [HomePage, OrbitingSlideComponent, SlideComponent, SlideButtonComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class HomePageModule {}
