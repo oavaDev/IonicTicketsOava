@@ -3,8 +3,8 @@
   <div *ngFor="let notification of notifications">
     <app-notifications-intro-component *ngIf="index === 2"></app-notifications-intro-component>
   </div>
-  <div class="ion-image-container">
-    <ion-img *ngIf="index === 1" class="slide-image" src="assets/images/map-image.jpg"></ion-img>
+  <div *ngIf="index === 1"  class="ion-image-container">
+    <ion-img class="slide-image" src="assets/images/map-image.jpg"></ion-img>
   </div>
   <ion-text class="slide-title" >{{data.title}}</ion-text>
   <ion-text class="slide-description">{{data.description}}</ion-text>
