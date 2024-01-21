@@ -1,0 +1,16 @@
+<ion-header class="header" [translucent]="true">
+  <ion-toolbar>
+    <ion-title >
+      Tickets.me
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <swiper-container>
+    <swiper-slide *ngFor="let slide of slides; index as i">
+      <app-slide [data]="slide" [index] = "i"></app-slide>
+      <app-slide-button></app-slide-button>
+    </swiper-slide>
+  </swiper-container>
+</ion-content>

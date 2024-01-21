@@ -7,18 +7,5 @@ import {ISlideComponent} from "../Interfaces/IslideComponent";
   styleUrls: ['home.page.scss'],
 })
 export class HomePage{
-  slides :  ISlideComponent[] = [
-    {
-      title : "Welcome to Tickets.me ",
-      description : "We are a service application to manage your ticket without charging any fees, enjoy your hobby freely ",
-    },
-    {
-      title : "Find nearby events",
-      description : "We are a service application to manage your ticket without charging any fees, enjoy your hobby freely "
-    },
-    {
-      title : "Stay updated",
-      description : "We can follow your favorite events and get notified when they are updated"
-    }
-  ]
+
 }
