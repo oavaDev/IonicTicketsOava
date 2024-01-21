@@ -8,6 +8,7 @@ import {ISlideComponent} from "../../Interfaces/IslideComponent";
 export class SlideComponent {
   @Input() data : ISlideComponent
   @Input() index : number
+  notifications: number[] = [1,2,3]
   constructor() {
     this.data = {
       title : "",
