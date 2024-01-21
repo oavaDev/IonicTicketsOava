@@ -4,6 +4,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  .ion-image-container{
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    ion-img::part(image) {
+      width: 100%;
+      border-radius: 20px;
+    }
+  }
   .slide-title{
     margin-top: 1rem;
     font-weight: bold;
