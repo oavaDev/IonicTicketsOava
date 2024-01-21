@@ -10,7 +10,8 @@
   <swiper-container>
     <swiper-slide *ngFor="let slide of slides; index as i">
       <app-slide [data]="slide" [index] = "i"></app-slide>
-      <app-slide-button></app-slide-button>
+      <app-slide-button *ngIf="i !== 2"></app-slide-button>
+      <app-go-home-component *ngIf="i === 2"></app-go-home-component>
     </swiper-slide>
   </swiper-container>
 </ion-content>

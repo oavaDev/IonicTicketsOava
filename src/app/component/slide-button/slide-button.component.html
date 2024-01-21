@@ -1,6 +1,4 @@
 <ion-button class="slide-button" color="medium" fill="outline" expand="Block">
   Slide
-  <ion-icon [color]="interval1" name="caret-forward-outline"></ion-icon>
-  <ion-icon [color]="interval2" name="caret-forward-outline"></ion-icon>
-  <ion-icon [color]="interval3" name="caret-forward-outline"></ion-icon>
+  <ion-icon *ngFor="let interval of intervalNames; index as i" [color]="intervalNames[i]" name="caret-forward-outline"></ion-icon>
 </ion-button>

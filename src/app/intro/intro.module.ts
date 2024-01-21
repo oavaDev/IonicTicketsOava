@@ -9,6 +9,10 @@ import { IntroPage } from './intro.page';
 import {OrbitingSlideComponent} from "../component/orbiting-slide/orbiting-slide.component";
 import {SlideComponent} from "../component/slide/slide.component";
 import {SlideButtonComponent} from "../component/slide-button/slide-button.component";
+import {GoHomeComponentComponent} from "../component/go-home-component/go-home-component.component";
+import {
+  NotificationsIntroComponentComponent
+} from "../component/notifications-intro-component/notifications-intro-component.component";
 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 @NgModule({
@@ -18,7 +22,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     IonicModule,
     IntroPageRoutingModule
   ],
-  declarations: [IntroPage,OrbitingSlideComponent, SlideComponent, SlideButtonComponent],
+  declarations: [IntroPage, OrbitingSlideComponent, SlideComponent, SlideButtonComponent, NotificationsIntroComponentComponent, GoHomeComponentComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class IntroPageModule {}
