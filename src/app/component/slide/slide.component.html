@@ -1,7 +1,7 @@
 <div class="slide-main">
   <app-orbiting-slide *ngIf="index === 0" ></app-orbiting-slide>
-  <div *ngFor="let notification of notifications">
-    <app-notifications-intro-component *ngIf="index === 2"></app-notifications-intro-component>
+  <div *ngIf="index === 2">
+    <app-notifications-intro-component *ngFor="let notification of notifications" ></app-notifications-intro-component>
   </div>
   <div *ngIf="index === 1"  class="ion-image-container">
     <ion-img class="slide-image" src="assets/images/map-image.jpg"></ion-img>
