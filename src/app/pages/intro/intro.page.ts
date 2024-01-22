@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ISlideComponent} from "../Interfaces/IslideComponent";
+import {ISlideComponent} from "../../Interfaces/IslideComponent";
 
 @Component({
   selector: 'app-intro',
