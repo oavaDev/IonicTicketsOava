@@ -6,6 +6,9 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import {ConcertCardComponent} from "../../component/concert-card/concert-card.component";
+
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {ConcertCardSwiperComponent} from "../../component/concert-card-swiper/concert-card-swiper.component";
 @NgModule({
   imports: [
     CommonModule,
@@ -13,6 +16,7 @@ import {ConcertCardComponent} from "../../component/concert-card/concert-card.co
     IonicModule,
     HomePageRoutingModule
   ],
-    declarations: [HomePage, ConcertCardComponent],
+  declarations: [HomePage, ConcertCardComponent, ConcertCardSwiperComponent],
+  schemas : [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomePageModule {}

@@ -1,4 +1,14 @@
 ion-footer{
   position: fixed;
   bottom: 0;
+  width: 100%;
+  border-top: 1px solid #E0E0E0;
+  .icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .icon{
+      margin: 1rem;
+    }
+  }
 }

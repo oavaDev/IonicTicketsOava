@@ -7,5 +7,9 @@ import {ISlideComponent} from "../../Interfaces/IslideComponent";
   styleUrls: ['home.page.scss'],
 })
 export class HomePage{
+  user : string
 
+  constructor() {
+    this.user = "Omar"
+  }
 }
