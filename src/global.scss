@@ -24,3 +24,8 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+//La unica forma que veo de editar el color de la toolbar
+ion-toolbar {
+  --background: #2a2a2a;
+  border: 1px solid #0d0d0d;
+}

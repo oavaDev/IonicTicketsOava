@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component,} from '@angular/core';
 import { register } from 'swiper/element/bundle';
+import {Event, NavigationEnd, Router} from "@angular/router";
 
 register();
 @Component({
@@ -8,5 +9,16 @@ register();
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  currentRoute : string;
+  constructor(private router : Router) {
+    this.currentRoute = "";
+    this.router.events.subscribe((event : Event) => {
+      if (event instanceof  NavigationEnd) {
+        this.currentRoute = event.urlAfterRedirects;
+      }
+    })
+  }
+  showFooter() {
+    return this.currentRoute !== "/intro"
+  }
 }
