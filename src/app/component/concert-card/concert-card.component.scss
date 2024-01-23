@@ -1,0 +1,78 @@
+.concert_component{
+  margin: 1rem auto;
+  width: 20rem;
+  height: 13rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0.8rem;
+  ion-img::part(image) {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+  .concert_component__header{
+    width: 90%;
+    margin: 0.5rem auto;
+    border-radius: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    .concert_component__header__participants{
+      padding: 0.5rem;
+      border-radius: 0.7rem;
+      background-color: #2a2a2a;
+      font-weight: lighter;
+      color: white;
+    }
+    .concert_component__header__like{
+      padding: 0.5rem;
+      display: flex;
+      border-radius: 20%;
+      background-color: #2a2a2a;
+      font-weight: bold;
+      color: white;
+      ion-icon{
+        margin: auto;
+      }
+    }
+  }
+  .concert_component__body{
+    height: 4rem;
+    width: 90%;
+    margin: 0.5rem auto;
+    border-radius: 0.8rem ;
+    background-color: #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5rem;
+    .concert_component__body__title{
+      width:fit-content;
+      border-radius: 0.8rem;
+      font-weight: lighter;
+      padding: 0.1rem;
+      color: white;
+    }
+    .concert_component__body__artist{
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      .concert_component__body__artist__info{
+        display:flex;
+        align-items: center;
+        gap: 0.5rem;
+        .concert_component__body__artist__photo{
+          .concert_component__body__artist__photo-img::part(image) {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            padding: 0;
+            margin: 0;
+          }
+        }
+
+      }
+    }
+
+  }
+}

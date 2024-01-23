@@ -1,0 +1,24 @@
+<ion-card color="primary" class="concert_component" [style.background]="'url(' + data.image + ') no-repeat'" [style.background-size]="'cover'">
+  <div class="concert_component__header">
+    <div class="concert_component__header__participants">
+      2k participants
+    </div>
+    <div class="concert_component__header__like">
+      <ion-icon name="heart-outline"></ion-icon>
+    </div>
+  </div>
+  <div class="concert_component__body">
+    <div class="concert_component__body__title">{{data.title}}</div>
+    <div class="concert_component__body__artist">
+      <div class="concert_component__body__artist__info">
+        <div class="concert_component__body__artist__photo">
+          <ion-img class="concert_component__body__artist__photo-img" [src]="data.artistImage" [alt]="data.artist + 'image'"  ></ion-img>
+        </div>
+        <div class="concert_component__body__artist__name">{{data.artist}}</div>
+      </div>
+      <div class="concert_component__body__artist__date">
+        <ion-text>{{ data.date }}</ion-text>
+      </div>
+    </div>
+  </div>
+</ion-card>
