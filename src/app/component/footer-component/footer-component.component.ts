@@ -9,10 +9,10 @@ import {Router} from "@angular/router";
 export class FooterComponentComponent {
   @Input() showFooter : boolean = true;
   iconRoutes = [
-    {path : '/home', icon : 'home-outline'},
-    {path : '/discover', icon : 'compass-outline'},
-    {path : '/tickets', icon : 'ticket-outline'},
-    {path : '/settings', icon : 'settings-outline'},
+    {path : 'home', icon : 'home-outline', name : "Home"},
+    {path : 'discover', icon : 'compass-outline', name : "Discover"},
+    {path : 'tickets', icon : 'ticket-outline' , name : "Tickets"},
+    {path : 'settings', icon : 'settings-outline', name: "Settings"},
   ]
   constructor(private router : Router) { }
   navigateToPath(path : string ) {
