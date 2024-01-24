@@ -8,9 +8,17 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  username: string = '';
-  password: string = '';
   loginForm : FormGroup
+  validation_messages = {
+    'email' : [
+      {type : 'required',message : 'Email is required'},
+      {type : 'email',message : 'Email is not valid'}
+    ],
+    'password' : [
+      {type : 'required',message : 'Password is required'},
+      {type : 'minlength',message : 'Password must be at least 6 characters long'}
+    ]
+  }
   constructor(private router: Router,
               private formBuilder : FormBuilder) {
     this.loginForm = this.formBuilder.group({

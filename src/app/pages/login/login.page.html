@@ -15,15 +15,25 @@
           <ion-icon name="mail-outline"></ion-icon>
         </ion-input>
       </ion-item>
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div class="login-input-container-validations" *ngIf="(loginForm.get('email')?.hasError(validation.type) && (loginForm.get('email')?.dirty) || loginForm.get('email')?.touched)">
+          {{validation.message}}
+        </div>
+      </ng-container>
       <ion-item >
         <ion-input label="Password" label-placement="floating" class="login-input-container-input" placeholder="Password" type="password"  formControlName="password">
           <ion-icon name="lock-closed-outline"></ion-icon>
         </ion-input>
       </ion-item>
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div class="login-input-container-validations" *ngIf="(loginForm.get('password')?.hasError(validation.type) && (loginForm.get('password')?.dirty) || loginForm.get('password')?.touched)">
+          {{validation.message}}
+        </div>
+      </ng-container>
       <ion-text class="login-forgot-password">Forgot Password?</ion-text>
     </div>
     <div class="login-button-container">
-      <ion-button color="medium" class="login-button" type="submit">Login</ion-button>
+      <ion-button [disabled]="!loginForm.valid" color="medium" class="login-button" type="submit">Login</ion-button>
       <div class="login-button-register">
         <ion-text class="login-button-register-join">
           Join with us
