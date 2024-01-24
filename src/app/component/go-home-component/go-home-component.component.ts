@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import {Router} from "@angular/router";
+import {Storage} from "@ionic/storage-angular";
 
 @Component({
   selector: 'app-go-home-component',
@@ -8,11 +9,12 @@ import {Router} from "@angular/router";
 })
 export class GoHomeComponentComponent {
 
-  constructor(private router: Router){
+  constructor(private router: Router,
+              private storage : Storage){
   }
   goHome(){
-    localStorage.setItem('introShown', 'true');
-    this.router.navigate(['/home']);
+    this.storage.set('introShown', true);
+    this.router.navigateByUrl('/home');
   }
 
 }
