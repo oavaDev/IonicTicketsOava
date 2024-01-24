@@ -8,7 +8,7 @@
     </ion-text>
     <app-orbiting-slide></app-orbiting-slide>
   </div>
-  <form [formGroup]="loginForm">
+  <form [formGroup]="loginForm"  (ngSubmit)="login(loginForm.value)">
     <div class="login-input-container">
       <ion-item >
         <ion-input label="Email" label-placement="floating" class="login-input-container-input" placeholder="oava@pca.edu.co" type="text" formControlName="email">
@@ -23,7 +23,7 @@
       <ion-text class="login-forgot-password">Forgot Password?</ion-text>
     </div>
     <div class="login-button-container">
-      <ion-button color="medium" class="login-button" (click)="login()">Login</ion-button>
+      <ion-button color="medium" class="login-button" type="submit">Login</ion-button>
       <div class="login-button-register">
         <ion-text class="login-button-register-join">
           Join with us

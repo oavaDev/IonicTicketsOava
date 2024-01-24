@@ -24,8 +24,8 @@ export class LoginPage {
       )
     })
   }
-  login() {
-    this.router.navigate(['/home']);
+  login(data : any)  {
+    console.log(data)
   }
 
 }
