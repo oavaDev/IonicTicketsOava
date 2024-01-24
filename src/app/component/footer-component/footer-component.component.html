@@ -1,16 +1,7 @@
 <ion-footer *ngIf="showFooter">
-  <div class="icons">
-    <div class="icon">
-      <ion-icon size="large" name="home-outline"></ion-icon>
-    </div>
-    <div class="icon">
-      <ion-icon size="large" name="compass-outline"></ion-icon>
-    </div>
-    <div class="icon">
-      <ion-icon size="large" name="ticket-outline"></ion-icon>
-    </div>
-    <div class="icon">
-      <ion-icon size="large" name="settings-outline"></ion-icon>
+  <div class="icons" >
+    <div class="icon" *ngFor="let route of iconRoutes; index as i" (click)="navigateToPath(route.path)" >
+      <ion-icon size="large" [name]="route.icon"></ion-icon>
     </div>
   </div>
 </ion-footer>
