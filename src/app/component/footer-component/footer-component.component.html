@@ -1,5 +1,5 @@
 <ion-tabs >
-  <ion-tab-bar slot="bottom" *ngIf="showFooter" >
+  <ion-tab-bar slot="bottom" *ngIf="showFooter">
     <ion-tab-button *ngFor="let route of iconRoutes; index as i" [tab]="route.path">
       <ion-icon [name]="route.icon"></ion-icon>
       {{route.name}}

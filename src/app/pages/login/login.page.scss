@@ -1,0 +1,75 @@
+.login-header{
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  .login-header__title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+}
+.login-input-container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 20rem;
+  margin: 3rem auto;
+  ion-item::part(native){
+    background-color: #2a2a2a;
+    border-radius: 0.7rem;
+    border: 1px solid #86888f;
+  }
+  .login-input-container-input{
+    display: flex;
+    background-color: #2a2a2a;
+    width: 20rem;
+    padding-top: 4rem;
+    align-items: center;
+  }
+  .login-input-container-input{
+    display: flex;
+    width: 20rem;
+    padding-top: 4rem;
+    align-items: center;
+    gap: 1rem;
+  }
+  .login-forgot-password{
+    text-align: end;
+    font-size: 0.8rem;
+  }
+}
+.login-button-container{
+  width: 20rem;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  .login-button::part(native){
+    border-radius: 2rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  .login-button-register{
+    text-align: center;
+    .login-button-register-join{
+      color: #86888f;
+    }
+    .login-button-register-account{
+      color: white;
+      font-weight: bold;
+    }
+  }
+}
+.login-terms-and-conditions{
+  width: 20rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #86888f;
+  margin: 1rem auto;
+  .login-terms-and-conditions-link{
+    color: white;
+    font-weight: bold;
+  }
+}
