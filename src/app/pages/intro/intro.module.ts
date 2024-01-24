@@ -16,13 +16,16 @@ import {
 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    IntroPageRoutingModule
-  ],
-  declarations: [IntroPage, OrbitingSlideComponent, SlideComponent, SlideButtonComponent, NotificationsIntroComponentComponent, GoHomeComponentComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        IntroPageRoutingModule
+    ],
+    declarations: [IntroPage, OrbitingSlideComponent, SlideComponent, SlideButtonComponent, NotificationsIntroComponentComponent, GoHomeComponentComponent],
+    exports: [
+        OrbitingSlideComponent
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class IntroPageModule {}

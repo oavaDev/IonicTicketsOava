@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -9,8 +10,20 @@ import {Router} from "@angular/router";
 export class LoginPage {
   username: string = '';
   password: string = '';
-
-  constructor(private router: Router) {}
+  loginForm : FormGroup
+  constructor(private router: Router,
+              private formBuilder : FormBuilder) {
+    this.loginForm = this.formBuilder.group({
+      email : new FormControl(
+        "",
+        Validators.compose([Validators.required,Validators.email])
+      ),
+      password : new FormControl(
+        "",
+        Validators.compose([Validators.required,Validators.minLength(6)])
+      )
+    })
+  }
   login() {
     this.router.navigate(['/home']);
   }

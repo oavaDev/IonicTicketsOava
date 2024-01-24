@@ -6,59 +6,47 @@
     <ion-text>
       Welcome back, you've been missed!
     </ion-text>
+    <app-orbiting-slide></app-orbiting-slide>
   </div>
-  <div class="login-input-container">
-    <ion-item class="">
-      <ion-input class="login-input-container-input" placeholder="oava@pca.edu.co" type="text" [(ngModel)]="username">
-        <ion-icon name="mail-outline"></ion-icon>
-      </ion-input>
-    </ion-item>
-    <ion-item class="">
-      <ion-input class="login-input-container-input" placeholder="Password" type="password" [(ngModel)]="password">
-        <ion-icon name="lock-closed-outline"></ion-icon>
-      </ion-input>
-    </ion-item>
-    <ion-text class="login-forgot-password">Forgot Password?</ion-text>
-  </div>
-  <div class="login-button-container">
-    <ion-button color="medium" class="login-button" expand="full" (click)="login()">Login</ion-button>
-    <div class="login-button-register">
-      <ion-text class="login-button-register-join">
-        Join with us
+  <form [formGroup]="loginForm">
+    <div class="login-input-container">
+      <ion-item >
+        <ion-input label="Email" label-placement="floating" class="login-input-container-input" placeholder="oava@pca.edu.co" type="text" formControlName="email">
+          <ion-icon name="mail-outline"></ion-icon>
+        </ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-input label="Password" label-placement="floating" class="login-input-container-input" placeholder="Password" type="password"  formControlName="password">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+        </ion-input>
+      </ion-item>
+      <ion-text class="login-forgot-password">Forgot Password?</ion-text>
+    </div>
+    <div class="login-button-container">
+      <ion-button color="medium" class="login-button" (click)="login()">Login</ion-button>
+      <div class="login-button-register">
+        <ion-text class="login-button-register-join">
+          Join with us
+        </ion-text>
+        <ion-text class="login-button-register-account">
+          Create Account
+        </ion-text>
+      </div>
+    </div>
+    <div class="login-terms-and-conditions">
+      <ion-text class="login-terms-and-conditions-text">
+        By continuing, you agree to our
       </ion-text>
-      <ion-text class="login-button-register-account">
-        Create Account
+      <ion-text class="login-terms-and-conditions-link">
+        <b>Terms and Conditions</b>
+      </ion-text>
+      <ion-text class="login-terms-and-conditions-text">
+        and
+      </ion-text>
+      <ion-text class="login-terms-and-conditions-link">
+        <b>Privacy Policy</b>
       </ion-text>
     </div>
-  </div>
-  <div class="login-terms-and-conditions">
-    <ion-text class="login-terms-and-conditions-text">
-      By continuing, you agree to our
-    </ion-text>
-    <ion-text class="login-terms-and-conditions-link">
-      <b>Terms and Conditions</b>
-    </ion-text>
-    <ion-text class="login-terms-and-conditions-text">
-      and
-    </ion-text>
-    <ion-text class="login-terms-and-conditions-link">
-      <b>Privacy Policy</b>
-    </ion-text>
-  </div>
+  </form>
+
 </ion-content>
-
-<!--
-<ion-content class="">
-  <ion-item>
-    <ion-label position="floating">Username</ion-label>
-    <ion-input type="text" [(ngModel)]="username"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="floating">Password</ion-label>
-    <ion-input type="password" [(ngModel)]="password"></ion-input>
-  </ion-item>
-
-  <ion-button expand="full" (click)="login()">Login</ion-button>
-</ion-content>
--->
