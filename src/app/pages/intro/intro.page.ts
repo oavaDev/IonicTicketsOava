@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {ISlideComponent} from "../../Interfaces/IslideComponent";
+import { Component } from '@angular/core';
+import {IslideInterface} from "../../Interfaces/IslideInterface";
 
 @Component({
   selector: 'app-intro',
@@ -7,7 +7,7 @@ import {ISlideComponent} from "../../Interfaces/IslideComponent";
   styleUrls: ['./intro.page.scss'],
 })
 export class IntroPage {
-  slides :  ISlideComponent[] = [
+  slides :  IslideInterface[] = [
     {
       title : "Welcome to Tickets.me ",
       description : "We are a service application to manage your ticket without charging any fees, enjoy your hobby freely ",

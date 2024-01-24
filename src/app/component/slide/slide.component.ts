@@ -1,12 +1,12 @@
 import {Component, Input } from '@angular/core';
-import {ISlideComponent} from "../../Interfaces/IslideComponent";
+import {IslideInterface} from "../../Interfaces/IslideInterface";
 @Component({
   selector: 'app-slide',
   templateUrl: './slide.component.html',
   styleUrls: ['./slide.component.scss'],
 })
 export class SlideComponent {
-  @Input() data : ISlideComponent
+  @Input() data : IslideInterface
   @Input() index : number
   notifications : number[] = [...new Array(3)].map(() => 0);
   constructor() {
