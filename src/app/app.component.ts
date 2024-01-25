@@ -24,6 +24,6 @@ export class AppComponent {
     await this.storage.create();
   }
   showFooter() {
-    return this.currentRoute !== "/intro"
+    return !(this.currentRoute === "/intro" || this.currentRoute === "/login");
   }
 }
