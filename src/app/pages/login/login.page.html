@@ -18,7 +18,7 @@
       <div class="login-input-container-validations">
         <ng-container  *ngFor="let validation of validation_messages.email">
           <div  *ngIf="(loginForm.get('email')?.hasError(validation.type) && (loginForm.get('email')?.dirty) || loginForm.get('email')?.touched)">
-            {{validation.message}}
+            {{validation.message}}*
           </div>
         </ng-container>
       </div>
@@ -30,7 +30,7 @@
       <div class="login-input-container-validations">
         <ng-container  *ngFor="let validation of validation_messages.password">
           <div  *ngIf="(loginForm.get('password')?.hasError(validation.type) && (loginForm.get('password')?.dirty) || loginForm.get('password')?.touched)">
-            {{validation.message}}
+            {{validation.message}}*
           </div>
         </ng-container>
       </div>
