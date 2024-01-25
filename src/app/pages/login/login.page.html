@@ -15,21 +15,25 @@
           <ion-icon name="mail-outline"></ion-icon>
         </ion-input>
       </ion-item>
-      <ng-container *ngFor="let validation of validation_messages.password">
-        <div class="login-input-container-validations" *ngIf="(loginForm.get('email')?.hasError(validation.type) && (loginForm.get('email')?.dirty) || loginForm.get('email')?.touched)">
-          {{validation.message}}
-        </div>
-      </ng-container>
+      <div class="login-input-container-validations">
+        <ng-container  *ngFor="let validation of validation_messages.email">
+          <div  *ngIf="(loginForm.get('email')?.hasError(validation.type) && (loginForm.get('email')?.dirty) || loginForm.get('email')?.touched)">
+            {{validation.message}}
+          </div>
+        </ng-container>
+      </div>
       <ion-item >
         <ion-input label="Password" label-placement="floating" class="login-input-container-input" placeholder="Password" type="password"  formControlName="password">
           <ion-icon name="lock-closed-outline"></ion-icon>
         </ion-input>
       </ion-item>
-      <ng-container *ngFor="let validation of validation_messages.password">
-        <div class="login-input-container-validations" *ngIf="(loginForm.get('password')?.hasError(validation.type) && (loginForm.get('password')?.dirty) || loginForm.get('password')?.touched)">
-          {{validation.message}}
-        </div>
-      </ng-container>
+      <div class="login-input-container-validations">
+        <ng-container  *ngFor="let validation of validation_messages.password">
+          <div  *ngIf="(loginForm.get('password')?.hasError(validation.type) && (loginForm.get('password')?.dirty) || loginForm.get('password')?.touched)">
+            {{validation.message}}
+          </div>
+        </ng-container>
+      </div>
       <ion-text class="login-forgot-password">Forgot Password?</ion-text>
     </div>
     <div class="login-button-container">

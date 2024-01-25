@@ -24,6 +24,7 @@
   }
   .login-input-container-validations{
     display : flex;
+    flex-direction: column;
     font-size: 0.8rem;
     color: #ff4961;
   }
