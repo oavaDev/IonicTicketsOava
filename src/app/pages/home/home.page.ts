@@ -9,6 +9,6 @@ export class HomePage{
   user : string
 
   constructor() {
-    this.user = "Omar"
+    this.user = ""
   }
 }

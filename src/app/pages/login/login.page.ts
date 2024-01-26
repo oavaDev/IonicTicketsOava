@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import {Router} from "@angular/router";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {AuthServiceService} from "../../services/auth-service.service";
+import {NavController} from "@ionic/angular";
 
 @Component({
   selector: 'app-login',
@@ -19,8 +20,10 @@ export class LoginPage {
       {type : 'minlength',message : 'Password must be at least 6 characters long'}
     ]
   }
-  constructor(private router: Router,
-              private formBuilder : FormBuilder) {
+  loginMessage : any = ""
+  constructor(private navCtrl : NavController,
+              private formBuilder : FormBuilder,
+              private auth : AuthServiceService) {
     this.loginForm = this.formBuilder.group({
       email : new FormControl(
         "",
@@ -32,8 +35,14 @@ export class LoginPage {
       )
     })
   }
-  login(data : any)  {
-    console.log(data)
+  login(login_data : any)  {
+    console.log(login_data)
+    this.auth.loginUser(login_data).then(res => {
+      this.loginMessage = res;
+      this.navCtrl.navigateForward('/home')
+    }).catch(err => {
+      this.loginMessage = err;
+    })
   }
 
 }

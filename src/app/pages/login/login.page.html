@@ -17,7 +17,7 @@
       </ion-item>
       <div class="login-input-container-validations">
         <ng-container  *ngFor="let validation of validation_messages.email">
-          <div  *ngIf="(loginForm.get('email')?.hasError(validation.type) && (loginForm.get('email')?.dirty) || loginForm.get('email')?.touched)">
+          <div  *ngIf="(loginForm.get('email')?.hasError(validation.type) && (loginForm.get('email')?.dirty) )">
             {{validation.message}}*
           </div>
         </ng-container>
@@ -29,7 +29,7 @@
       </ion-item>
       <div class="login-input-container-validations">
         <ng-container  *ngFor="let validation of validation_messages.password">
-          <div  *ngIf="(loginForm.get('password')?.hasError(validation.type) && (loginForm.get('password')?.dirty) || loginForm.get('password')?.touched)">
+          <div  *ngIf="(loginForm.get('password')?.hasError(validation.type) && (loginForm.get('password')?.dirty) )">
             {{validation.message}}*
           </div>
         </ng-container>
@@ -38,6 +38,13 @@
     </div>
     <div class="login-button-container">
       <ion-button [disabled]="!loginForm.valid" color="medium" class="login-button" type="submit">Login</ion-button>
+      <div class='"login-input-container-error'>
+        <ng-container>
+          <div>
+          {{loginMessage}}
+          </div>
+        </ng-container>
+      </div>
       <div class="login-button-register">
         <ion-text class="login-button-register-join">
           Join with us
