@@ -1,7 +1,8 @@
 import {Component, Input} from '@angular/core';
 import {Router} from "@angular/router";
-
+import { ChangeDetectionStrategy } from '@angular/core';
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-footer-component',
   templateUrl: './footer-component.component.html',
   styleUrls: ['./footer-component.component.scss'],
