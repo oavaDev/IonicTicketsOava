@@ -10,6 +10,9 @@
     font-weight: 700;
     margin-bottom: 1rem;
   }
+  @media (max-height: 850px){
+      gap: 1rem;
+  }
 }
 .login-input-container{
   display: flex;
@@ -17,6 +20,10 @@
   gap: 1rem;
   width: 20rem;
   margin: 5rem auto 2rem auto;
+  @media (max-height: 850px){
+    gap: 0.5rem;
+    margin: 2.5rem auto 1rem auto;
+  }
   ion-item::part(native){
     background-color: #2a2a2a;
     border-radius: 0.7rem;
@@ -34,6 +41,7 @@
     width: 20rem;
     padding-top: 4rem;
     align-items: center;
+
   }
   .login-input-container-input{
     display: flex;
