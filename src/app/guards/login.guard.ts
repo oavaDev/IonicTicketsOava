@@ -1,20 +1,19 @@
 import { Injectable } from '@angular/core';
-import {CanActivate} from '@angular/router';
+import {CanActivate, Router} from '@angular/router';
 import {Storage} from "@ionic/storage-angular";
-import { NavController} from "@ionic/angular";
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginGuard implements CanActivate {
-  constructor(private navCtrl : NavController,
+  constructor(private router : Router,
               private storage : Storage) {}
-  async canActivate() {
+  async canActivate(){
     const userLoggedIn = await this.storage.get('userLoggedIn');
-    if (userLoggedIn) {
+    if(userLoggedIn){
       return true;
-    } else {
-      this.navCtrl.navigateForward('/login');
+    }else{
+      this.router.navigateByUrl('/login');
       return false;
     }
   }
