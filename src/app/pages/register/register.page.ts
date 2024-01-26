@@ -1,17 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {AuthServiceService} from "../../services/auth-service.service";
 import {NavController} from "@ionic/angular";
+import {AuthServiceService} from "../../services/auth-service.service";
 import {Storage} from "@ionic/storage-angular";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-register',
+  templateUrl: './register.page.html',
+  styleUrls: ['./register.page.scss'],
 })
-export class LoginPage {
-  loginForm : FormGroup
+export class RegisterPage {
+  registerForm : FormGroup
   validation_messages = {
+    'name' : [
+      {type : 'required',message : 'Name is required'},
+      {type : 'minlength',message : 'Name must be at least 4 characters long'}
+    ],
     'email' : [
       {type : 'required',message : 'Email is required'},
       {type : 'email',message : 'Email is not valid'}
@@ -21,12 +25,16 @@ export class LoginPage {
       {type : 'minlength',message : 'Password must be at least 6 characters long'}
     ]
   }
-  loginMessage : any = ""
+  registerMessage : any = ""
   constructor(private navCtrl : NavController,
               private formBuilder : FormBuilder,
               private auth : AuthServiceService,
               private storage : Storage) {
-    this.loginForm = this.formBuilder.group({
+    this.registerForm = this.formBuilder.group({
+      name : new FormControl(
+        "",
+        Validators.compose([Validators.required,Validators.minLength(4)])
+      ),
       email : new FormControl(
         "",
         Validators.compose([Validators.required,Validators.email])
@@ -38,20 +46,20 @@ export class LoginPage {
     })
   }
 
-  login(login_data : any)  {
+  register(login_data : any)  {
     this.auth.loginUser(login_data).then(res => {
-      this.loginMessage = res;
+      this.registerMessage = res;
       this.storage.set('userLoggedIn',true)
       this.navCtrl.navigateForward('/home')
     }).catch(err => {
-      this.loginMessage = err;
+      this.registerMessage = err;
     })
   }
 
   navigate(event : any){
     let route =  event.target?.id
     if (route){
-     this.navCtrl.navigateForward('/'+route)
+      this.navCtrl.navigateForward('/'+route)
     }
   }
 
