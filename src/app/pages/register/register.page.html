@@ -1,0 +1,80 @@
+<ion-content [fullscreen]="true">
+  <div class="register-header">
+    <ion-text class="register-header__title">
+      Ticket.me Register
+    </ion-text>
+    <ion-text>
+      Welcome, here starts your journey!
+    </ion-text>
+    <app-orbiting-slide></app-orbiting-slide>
+  </div>
+  <form [formGroup]="registerForm"  (ngSubmit)="register(registerForm.value)">
+    <div class="register-input-container">
+      <ion-item >
+        <ion-input label="Name" label-placement="floating" class="register-input-container-input" placeholder="Linus Torvalds" type="text" formControlName="name">
+          <ion-icon name="person-outline"></ion-icon>
+        </ion-input>
+      </ion-item>
+      <div class="register-input-container-validations">
+        <ng-container  *ngFor="let validation of validation_messages.name">
+          <div  *ngIf="(registerForm.get('name')?.hasError(validation.type) && (registerForm.get('name')?.dirty) )">
+            {{validation.message}}*
+          </div>
+        </ng-container>
+      </div>
+      <ion-item >
+        <ion-input label="Email" label-placement="floating" class="register-input-container-input" placeholder="oava@pca.edu.co" type="text" formControlName="email">
+          <ion-icon name="mail-outline"></ion-icon>
+        </ion-input>
+      </ion-item>
+      <div class="register-input-container-validations">
+        <ng-container  *ngFor="let validation of validation_messages.email">
+          <div  *ngIf="(registerForm.get('email')?.hasError(validation.type) && (registerForm.get('email')?.dirty) )">
+            {{validation.message}}*
+          </div>
+        </ng-container>
+      </div>
+      <ion-item >
+        <ion-input label="Password" label-placement="floating" class="register-input-container-input" placeholder="Password" type="password"  formControlName="password">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+        </ion-input>
+      </ion-item>
+      <div class="register-input-container-validations">
+        <ng-container  *ngFor="let validation of validation_messages.password">
+          <div  *ngIf="(registerForm.get('password')?.hasError(validation.type) && (registerForm.get('password')?.dirty) )">
+            {{validation.message}}*
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="register-button-container">
+      <ion-button [disabled]="!registerForm.valid" color="medium" class="register-button" type="submit">register</ion-button>
+      <div class='"register-input-container-error'>
+        <ng-container>
+          <div>
+            {{registerMessage}}
+          </div>
+        </ng-container>
+      </div>
+      <div class="register-button-register">
+        <ion-text (click)="navigate($event)" id="login" class="register-button-register-account">
+          Already have an account?
+        </ion-text>
+      </div>
+    </div>
+    <div class="register-terms-and-conditions">
+      <ion-text class="register-terms-and-conditions-text">
+        By continuing, you agree to our
+      </ion-text>
+      <ion-text class="register-terms-and-conditions-link">
+        <b>Terms and Conditions</b>
+      </ion-text>
+      <ion-text class="register-terms-and-conditions-text">
+        and
+      </ion-text>
+      <ion-text class="register-terms-and-conditions-link">
+        <b>Privacy Policy</b>
+      </ion-text>
+    </div>
+  </form>
+</ion-content>
