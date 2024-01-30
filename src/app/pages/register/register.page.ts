@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {NavController} from "@ionic/angular";
-import {AuthServiceService} from "../../services/auth-service.service";
 import {Storage} from "@ionic/storage-angular";
 
 @Component({
@@ -28,7 +27,6 @@ export class RegisterPage {
   registerMessage : any = ""
   constructor(private navCtrl : NavController,
               private formBuilder : FormBuilder,
-              private auth : AuthServiceService,
               private storage : Storage) {
     this.registerForm = this.formBuilder.group({
       name : new FormControl(
@@ -46,15 +44,6 @@ export class RegisterPage {
     })
   }
 
-  register(login_data : any)  {
-    this.auth.loginUser(login_data).then(res => {
-      this.registerMessage = res;
-      this.storage.set('userLoggedIn',true)
-      this.navCtrl.navigateForward('/home')
-    }).catch(err => {
-      this.registerMessage = err;
-    })
-  }
 
   navigate(event : any){
     let route =  event.target?.id

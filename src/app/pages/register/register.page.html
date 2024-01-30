@@ -8,7 +8,7 @@
     </ion-text>
     <app-orbiting-slide></app-orbiting-slide>
   </div>
-  <form [formGroup]="registerForm"  (ngSubmit)="register(registerForm.value)">
+  <form [formGroup]="registerForm"  >
     <div class="register-input-container">
       <ion-item >
         <ion-input label="Name" label-placement="floating" class="register-input-container-input" placeholder="Linus Torvalds" type="text" formControlName="name">

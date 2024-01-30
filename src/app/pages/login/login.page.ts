@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {AuthServiceService} from "../../services/auth-service.service";
 import {NavController} from "@ionic/angular";
 import {Storage} from "@ionic/storage-angular";
+import {DataService} from "../../services/data/data.service";
+import {IUserLoginInterface} from "../../Interfaces/user/IUserLoginInterface";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage {
+export class LoginPage{
   loginForm : FormGroup
   validation_messages = {
     'email' : [
@@ -24,8 +25,9 @@ export class LoginPage {
   loginMessage : any = ""
   constructor(private navCtrl : NavController,
               private formBuilder : FormBuilder,
-              private auth : AuthServiceService,
-              private storage : Storage) {
+              private storage : Storage,
+              private dataService: DataService
+  ) {
     this.loginForm = this.formBuilder.group({
       email : new FormControl(
         "",
@@ -38,16 +40,15 @@ export class LoginPage {
     })
   }
 
-  login(login_data : any)  {
-    this.auth.loginUser(login_data).then(res => {
+  login(login_data : IUserLoginInterface)  {
+    const user = login_data
+    this.dataService.login(user).subscribe(res => {
       this.loginMessage = res;
       this.storage.set('userLoggedIn',true)
+      console.log(res)
       this.navCtrl.navigateForward('/home')
-    }).catch(err => {
-      this.loginMessage = err;
     })
   }
-
   navigate(event : any){
     let route =  event.target?.id
     if (route){
