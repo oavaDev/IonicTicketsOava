@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl : 'https://ticketsback-8b471a057f17.herokuapp.com/',
+  apiUrl : 'https://ticketsback-8b471a057f17.herokuapp.com',
 };
 
 /*
