@@ -38,12 +38,11 @@
     </div>
     <div class="login-button-container">
       <ion-button [disabled]="!loginForm.valid" color="medium" class="login-button" type="submit">Login</ion-button>
-      <div class='"login-input-container-error'>
-        <ng-container>
-          <div>
+      <div class='login-input-container-error'>
           {{loginMessage}}
-          </div>
-        </ng-container>
+      </div>
+      <div class='login-input-container-success'>
+        {{loginMessage}}
       </div>
       <div class="login-button-register">
         <ion-text class="login-button-register-join">

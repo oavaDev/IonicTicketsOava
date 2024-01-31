@@ -1,15 +1,15 @@
 import {NgModule} from '@angular/core';
 
 import {HttpClientModule} from "@angular/common/http";
-import {DataService} from "./data.service";
+import {ApiService} from "./api.service";
 
 @NgModule({
   imports: [
     HttpClientModule
   ],
   providers: [
-    DataService
+    ApiService
   ]
 })
 
-export class DataServiceModule{}
+export class ApiServiceModule {}

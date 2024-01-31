@@ -6,11 +6,11 @@ import { IonicModule } from '@ionic/angular';
 import { LoginPageRoutingModule } from './login-routing.module';
 import { LoginPage } from './login.page';
 import {IntroPageModule} from "../intro/intro.module";
-import {DataServiceModule} from "../../services/data/data.service.module";
+import {ApiServiceModule} from "../../api/services/api.service.module";
 
 @NgModule({
   imports: [
-    DataServiceModule,
+    ApiServiceModule,
     CommonModule,
     FormsModule,
     IonicModule,

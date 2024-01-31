@@ -5,11 +5,8 @@ import {Storage} from "@ionic/storage-angular";
   providedIn: 'root'
 })
 export class AuthService {
-
   constructor( private storage: Storage ) { }
   async getToken(): Promise<string> {
     return await this.storage.get('token');
   }
-
-
 }

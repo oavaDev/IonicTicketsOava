@@ -8,16 +8,16 @@
     </ion-text>
     <app-orbiting-slide></app-orbiting-slide>
   </div>
-  <form [formGroup]="registerForm"  >
+  <form [formGroup]="registerForm"  (ngSubmit)="register(registerForm.value)" >
     <div class="register-input-container">
       <ion-item >
-        <ion-input label="Name" label-placement="floating" class="register-input-container-input" placeholder="Linus Torvalds" type="text" formControlName="name">
+        <ion-input label="Name" label-placement="floating" class="register-input-container-input" placeholder="Linus Torvalds" type="text" formControlName="username">
           <ion-icon name="person-outline"></ion-icon>
         </ion-input>
       </ion-item>
       <div class="register-input-container-validations">
-        <ng-container  *ngFor="let validation of validation_messages.name">
-          <div  *ngIf="(registerForm.get('name')?.hasError(validation.type) && (registerForm.get('name')?.dirty) )">
+        <ng-container  *ngFor="let validation of validation_messages.username">
+          <div  *ngIf="(registerForm.get('username')?.hasError(validation.type) && (registerForm.get('username')?.dirty) )">
             {{validation.message}}*
           </div>
         </ng-container>
@@ -47,14 +47,14 @@
         </ng-container>
       </div>
     </div>
+
     <div class="register-button-container">
       <ion-button [disabled]="!registerForm.valid" color="medium" class="register-button" type="submit">register</ion-button>
-      <div class='"register-input-container-error'>
-        <ng-container>
-          <div>
-            {{registerMessage}}
-          </div>
-        </ng-container>
+      <div *ngIf="registerMessageError.length > 0" class='register-input-container-error'>
+        {{registerMessageError}}
+      </div>
+      <div *ngIf="registerMessage.length > 0" class='register-input-container-success'>
+        {{registerMessage}}
       </div>
       <div class="register-button-register">
         <ion-text (click)="navigate($event)" id="login" class="register-button-register-account">

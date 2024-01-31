@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {NavController} from "@ionic/angular";
 import {Storage} from "@ionic/storage-angular";
-import {DataService} from "../../services/data/data.service";
+import {ApiService} from "../../api/services/api.service";
 import {IUserLoginInterface} from "../../Interfaces/user/IUserLoginInterface";
 
 @Component({
@@ -26,7 +26,7 @@ export class LoginPage{
   constructor(private navCtrl : NavController,
               private formBuilder : FormBuilder,
               private storage : Storage,
-              private dataService: DataService
+              private dataService: ApiService
   ) {
     this.loginForm = this.formBuilder.group({
       email : new FormControl(
@@ -39,14 +39,15 @@ export class LoginPage{
       )
     })
   }
-
   login(login_data : IUserLoginInterface)  {
-    const user = login_data
-    this.dataService.login(user).subscribe(res => {
-      this.loginMessage = res;
-      this.storage.set('userLoggedIn',true)
-      console.log(res)
-      this.navCtrl.navigateForward('/home')
+    this.dataService.login(login_data).subscribe({
+      next: (response) => {
+        this.storage.set('token',response.access_token)
+        this.navCtrl.navigateRoot('/home')
+      },
+      error: (error) => {
+        alert('There was an error in retrieving data from the server');
+      }
     })
   }
   navigate(event : any){
@@ -55,5 +56,4 @@ export class LoginPage{
      this.navCtrl.navigateForward('/'+route)
     }
   }
-
 }
