@@ -62,18 +62,18 @@
   flex-direction: column;
   gap: 0.7rem;
 
+  .register-input-container-error{
+    text-align: center;
+    color: #ff5b71;
+  }
+  .register-input-container-success{
+    text-align: center;
+    color: #91dc92;
+  }
   .register-button::part(native){
     border-radius: 2rem;
     color: white;
     font-size: 1rem;
-  }
-  .register-input-container-error{
-    text-align: center;
-    color: red;
-  }
-  .register-input-container-success{
-    text-align: center;
-    color: red;
   }
   .register-button-register{
     text-align: center;

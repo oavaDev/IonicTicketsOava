@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {AuthServiceService} from "../../services/auth-service.service";
 import {NavController} from "@ionic/angular";
 import {Storage} from "@ionic/storage-angular";
+import {ApiService} from "../../api/services/api.service";
+import {IUserLoginInterface} from "../../Interfaces/user/IUserLoginInterface";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage {
+export class LoginPage{
   loginForm : FormGroup
   validation_messages = {
     'email' : [
@@ -24,8 +25,9 @@ export class LoginPage {
   loginMessage : any = ""
   constructor(private navCtrl : NavController,
               private formBuilder : FormBuilder,
-              private auth : AuthServiceService,
-              private storage : Storage) {
+              private storage : Storage,
+              private dataService: ApiService
+  ) {
     this.loginForm = this.formBuilder.group({
       email : new FormControl(
         "",
@@ -37,22 +39,21 @@ export class LoginPage {
       )
     })
   }
-
-  login(login_data : any)  {
-    this.auth.loginUser(login_data).then(res => {
-      this.loginMessage = res;
-      this.storage.set('userLoggedIn',true)
-      this.navCtrl.navigateForward('/home')
-    }).catch(err => {
-      this.loginMessage = err;
+  login(login_data : IUserLoginInterface)  {
+    this.dataService.login(login_data).subscribe({
+      next: (response) => {
+        this.storage.set('token',response.access_token)
+        this.navCtrl.navigateRoot('/home')
+      },
+      error: (error) => {
+        alert('There was an error in retrieving data from the server');
+      }
     })
   }
-
   navigate(event : any){
     let route =  event.target?.id
     if (route){
      this.navCtrl.navigateForward('/'+route)
     }
   }
-
 }
