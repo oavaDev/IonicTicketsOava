@@ -1,8 +1,14 @@
 export interface IConcertInterface {
-  participants : number,
-  title : string,
-  date : string,
-  image : string,
-  artist : string,
-  artistImage : string,
+  name: string;
+  description: string;
+  category: string;
+  artists: [{ name: string; image: string }];
+  participants: number;
+  date: string;
+  city: string;
+  country: string;
+  location: string;
+  price: string;
+  image: string;
+  user: string;
 }

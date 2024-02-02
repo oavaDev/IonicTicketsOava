@@ -1,5 +1,5 @@
-<swiper-container>
-  <swiper-slide *ngFor="let concert of concertData;index as i">
-    <app-concert-card [concert]="concert" ></app-concert-card>
+<swiper-container *ngIf="concertData">
+  <swiper-slide  *ngFor="let concert of concertData;index as i">
+    <app-concert-card [concert]="concert && concert" ></app-concert-card>
   </swiper-slide>
 </swiper-container>

@@ -1,4 +1,4 @@
-<ion-card color="primary" class="concert_component" [style.background]="'url(' + concert.image + ') no-repeat'" [style.background-size]="'cover'">
+<ion-card  color="primary" class="concert_component" [style.background]="'url(' + concert.image + ') no-repeat'" [style.background-size]="'cover'">
   <div class="concert_component__header">
     <div class="concert_component__header__participants">
       {{concert.participants}} going
@@ -8,13 +8,13 @@
     </div>
   </div>
   <div class="concert_component__body">
-    <div class="concert_component__body__title">{{concert.title}}</div>
+    <div class="concert_component__body__title">{{concert.name}}</div>
     <div class="concert_component__body__artist">
       <div class="concert_component__body__artist__info">
         <div class="concert_component__body__artist__photo">
-          <ion-img class="concert_component__body__artist__photo-img" [src]="concert.artistImage" [alt]="concert.artist + 'image'"  ></ion-img>
+          <ion-img class="concert_component__body__artist__photo-img" [src]="concert.image" [alt]="concert.artists[0].name + 'image'"  ></ion-img>
         </div>
-        <div class="concert_component__body__artist__name">{{concert.artist}}</div>
+        <div class="concert_component__body__artist__name">{{concert.artists[0].name}}</div>
       </div>
       <div class="concert_component__body__artist__date">
         <ion-text>{{ concert.date }}</ion-text>

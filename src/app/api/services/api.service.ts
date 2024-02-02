@@ -25,4 +25,19 @@ export class ApiService {
       })
     )
   }
+
+  getCategories(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/categories`).pipe(
+      catchError((err) => {
+        return throwError(() => new Error("Something went wrong, Categories couldn't be fetched!"));
+      })
+    )
+  }
+  getEvents(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/events`).pipe(
+      catchError((err) => {
+        return throwError(() => new Error("Something went wrong, Events couldn't be fetched!"));
+      })
+    );
+  }
 }

@@ -17,7 +17,7 @@
       </ion-item>
       <div class="login-input-container-validations">
         <ng-container  *ngFor="let validation of validation_messages.email">
-          <div  *ngIf="(loginForm.get('email')?.hasError(validation.type) && (loginForm.get('email')?.dirty) )">
+          <div  *ngIf="(loginForm.get('email')?.hasError(validation.type) && (loginForm.get('email')?.dirty))">
             {{validation.message}}*
           </div>
         </ng-container>
