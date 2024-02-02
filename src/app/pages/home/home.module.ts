@@ -9,8 +9,6 @@ import {ConcertCardComponent} from "../../component/concert-card/concert-card.co
 
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {ConcertCardSwiperComponent} from "../../component/concert-card-swiper/concert-card-swiper.component";
-import {HttpClientModule} from "@angular/common/http";
-import {ApiService} from "../../api/services/api.service";
 import {ApiServiceModule} from "../../api/services/api.service.module";
 @NgModule({
   imports: [

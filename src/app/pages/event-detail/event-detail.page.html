@@ -1,0 +1,14 @@
+<ion-content *ngIf="event"  [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{event.name || "hola"}}</ion-card-title>
+    </ion-card-header>
+    <ion-img class="image" [src]="event.image" [alt]="event.name" [style]=""></ion-img>
+    <ion-card-content>
+      <p>{{event.description}}</p>
+      <p>Date: {{event.date}}</p>
+      <p>Location: {{event.location}}</p>
+      <p>Participants: {{event.participants}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,4 +1,4 @@
-<ion-card  color="primary" class="concert_component" [style.background]="'url(' + concert.image + ') no-repeat'" [style.background-size]="'cover'">
+<ion-card (click)="handleRedirect()"  color="primary" class="concert_component" [style.background]="'url(' + concert.image + ') no-repeat'" [style.background-size]="'cover'">
   <div class="concert_component__header">
     <div class="concert_component__header__participants">
       {{concert.participants}} going
