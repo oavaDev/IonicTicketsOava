@@ -1,0 +1,17 @@
+<ion-content [fullscreen]="true">
+<ng-container>
+  <ion-card (click)="handleRedirect(concert._id)"  *ngFor="let concert of concertData">
+    <ion-card-header>
+      <ion-card-title>{{concert.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-img [src]="concert.image"></ion-img>
+    </ion-card-content>
+    <ion-card-content>
+      {{concert.description}}
+    </ion-card-content>
+  </ion-card>
+</ng-container>
+</ion-content>
+
+

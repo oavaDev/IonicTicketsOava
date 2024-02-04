@@ -46,4 +46,11 @@ export class ApiService {
       })
     );
   }
+  getEventsByCategory(category: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/events/category/${category}`).pipe(
+      catchError((err) => {
+        return throwError(() => new Error("Something went wrong, Categories couldn't be fetched!"));
+      })
+    );
+  }
 }

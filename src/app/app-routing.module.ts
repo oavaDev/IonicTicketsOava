@@ -29,8 +29,11 @@ const routes: Routes = [
   {
     path: 'event-detail',
     loadChildren: () => import('./pages/event-detail/event-detail.module').then(m => m.EventDetailPageModule)
-  }
-
+  },
+  {
+    path: 'discover',
+    loadChildren: () => import('./pages/discover/discover.module').then( m => m.DiscoverPageModule)
+  },
   ]
 @NgModule({
   imports: [

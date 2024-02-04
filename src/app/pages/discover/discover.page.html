@@ -1,0 +1,17 @@
+<ion-content [fullscreen]="true">
+  <div class="discover">
+    <form [formGroup]="searchForm">
+      <ion-input label="Search"  label-placement="floating" class="search-input" placeholder="Search some concerts" type="text"  formControlName="search"/>
+    </form>
+    <div class="divider"></div>
+  </div>
+  <swiper-container [slidesPerView]="2">
+    <swiper-slide [routerLink]="['category',category._id]" *ngFor="let category of categories;index as i">
+      <ion-card class="category-card" [style.background]="'url(' + category.image + ') no-repeat'" [style.background-size]="'cover'">
+        {{category.name}}
+      </ion-card>
+    </swiper-slide>
+  </swiper-container>
+</ion-content>
+
+

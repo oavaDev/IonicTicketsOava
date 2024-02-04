@@ -1,0 +1,21 @@
+.discover{
+  width: 80%;
+  margin: 1rem auto;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.category-card{
+  color: white;
+  font-weight: bold;
+  font-size: large;
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .card-title{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+}
